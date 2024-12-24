@@ -1,4 +1,9 @@
+import { useState } from 'react';
+import { Typewriter } from 'react-simple-typewriter';
+
 const Home: React.FC = () => {
+  const [cursorBlinking, setCursorBlinking] = useState(false);
+
   return (
     <>
       <div className="flex h-screen justify-start items-center text-white text-center">
@@ -10,8 +15,16 @@ const Home: React.FC = () => {
           </p>
           <br />
           <br />
-          <h1 className="text-5xl font-mono text-purple-400">
-            FULLSTACK DEVELOPER
+          <h1 className="text-5xl font-mono text-purple-400 min-h-[3.6rem]">
+            <Typewriter
+              words={["Fullstack Developer"]}
+              loop={false}
+              cursor
+              cursorBlinking={cursorBlinking}
+              onDelay={() => setCursorBlinking(true)}
+              onType={() => setCursorBlinking(false)}
+              onDelete={() => setCursorBlinking(false)}
+            />
           </h1>
         </div>
       </div>
