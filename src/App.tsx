@@ -5,11 +5,13 @@ import Home from './components/Home';
 import About from './components/About';
 import Resume from './components/Resume';
 import Navbar from './components/NavBar';
+import RandomDotsBackground from './components/RandomDotsBackground';
 
 const App: React.FC = () => {
   return (
-    <div className="bg-fixed bg-[url('/images/home-bg.jpg')]">
+    <>
       <Router>
+        <RandomDotsBackground  />
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -18,7 +20,7 @@ const App: React.FC = () => {
           <Route path="*" element={<h1>404 - Page Not Found</h1>} />
         </Routes>
       </Router>
-    </div>
+    </>
   );
 };
 
